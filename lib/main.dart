@@ -16,9 +16,8 @@ class BacaNusantaraApp extends StatelessWidget {
       title: 'BacaNusantara',
       theme: AppColors.lightTheme,
       darkTheme: AppColors.darkTheme,
-      themeMode: ThemeMode.system, // Supports automatic light/dark mode switching
+      themeMode: ThemeMode.dark, // Forced Dark Mode for preview
       home: const SplashScreen(),
     );
   }
 }
-

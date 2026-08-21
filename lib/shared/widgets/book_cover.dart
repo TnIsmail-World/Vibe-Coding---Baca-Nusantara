@@ -7,6 +7,7 @@ class BookCover extends StatelessWidget {
   final double width;
   final double height;
   final double borderRadius;
+  final String? imageUrl;
 
   const BookCover({
     super.key,
@@ -16,6 +17,7 @@ class BookCover extends StatelessWidget {
     this.width = 120,
     this.height = 180,
     this.borderRadius = 8,
+    this.imageUrl,
   });
 
   @override
@@ -26,6 +28,16 @@ class BookCover extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(borderRadius),
+        image: imageUrl != null 
+            ? DecorationImage(
+                image: NetworkImage(imageUrl!),
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.3), 
+                  BlendMode.darken,
+                ),
+              )
+            : null,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../shared/widgets/buttons/primary_button.dart';
 import '../../../shared/widgets/buttons/social_button.dart';
 import '../../../shared/widgets/inputs/custom_text_field.dart';
+import '../../../core/presentation/root_screen.dart';
 import 'register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -102,7 +103,10 @@ class LoginScreen extends StatelessWidget {
               PrimaryButton(
                 text: 'Masuk',
                 onPressed: () {
-                  // Handle login
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const RootScreen()),
+                  );
                 },
               ),
               const SizedBox(height: 32),

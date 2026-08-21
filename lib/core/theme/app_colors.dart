@@ -22,7 +22,6 @@ class AppColors {
       scaffoldBackgroundColor: lightBackground,
       colorScheme: const ColorScheme.light(
         primary: lightPrimary,
-        background: lightBackground,
         surface: lightSurface,
       ),
     );
@@ -35,7 +34,6 @@ class AppColors {
       scaffoldBackgroundColor: darkBackground,
       colorScheme: const ColorScheme.dark(
         primary: darkPrimary,
-        background: darkBackground,
         surface: darkSurface,
       ),
     );
