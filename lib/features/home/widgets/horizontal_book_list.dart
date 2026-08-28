@@ -1,23 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../shared/widgets/book_cover.dart';
 import '../../book_detail/screens/book_detail_screen.dart';
-
-class BookData {
-  final String title;
-  final String author;
-  final Color coverColor;
-  final String? imageUrl;
-
-  BookData({
-    required this.title,
-    required this.author,
-    required this.coverColor,
-    this.imageUrl,
-  });
-}
+import '../../../core/data/app_state.dart';
 
 class HorizontalBookList extends StatelessWidget {
-  final List<BookData> books;
+  final List<BookModel> books;
 
   const HorizontalBookList({
     super.key,

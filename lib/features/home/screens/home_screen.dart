@@ -4,6 +4,7 @@ import '../widgets/promo_banner.dart';
 import '../widgets/continue_reading_card.dart';
 import '../widgets/horizontal_book_list.dart';
 import '../widgets/category_chips.dart';
+import '../../../core/data/app_state.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -94,28 +95,28 @@ class HomeScreen extends StatelessWidget {
                 title: 'Populer',
                 onSeeAll: () {},
               ),
-              HorizontalBookList(books: _getPopulerBooks()),
+              HorizontalBookList(books: AppState.instance.allBooks.take(4).toList()),
 
               // Rilis Baru
               SectionHeader(
                 title: 'Rilis Baru',
                 onSeeAll: () {},
               ),
-              HorizontalBookList(books: _getRilisBaruBooks()),
+              HorizontalBookList(books: AppState.instance.allBooks.skip(4).take(4).toList()),
 
               // Cerita Anak Bergambar
               SectionHeader(
                 title: 'Cerita Anak Bergambar',
                 onSeeAll: () {},
               ),
-              HorizontalBookList(books: _getCeritaAnakBooks()),
+              HorizontalBookList(books: AppState.instance.allBooks.where((b) => b.category == 'Cerita Anak Bergambar').toList()),
 
               // Manga & Komik
               SectionHeader(
                 title: 'Manga & Komik',
                 onSeeAll: () {},
               ),
-              HorizontalBookList(books: _getMangaBooks()),
+              HorizontalBookList(books: AppState.instance.allBooks.where((b) => b.category == 'Manga & Komik').toList()),
               const SizedBox(height: 24),
 
               // Kategori
@@ -125,41 +126,5 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  List<BookData> _getPopulerBooks() {
-    return [
-      BookData(title: 'Perahu Kertas di Muara', author: 'Dinda Ayu Prameswari', coverColor: const Color(0xFF1E3A8A)),
-      BookData(title: 'Rumah Kayu di Ujung Musim', author: 'Herman Sutanto', coverColor: const Color(0xFFD97757)),
-      BookData(title: 'Skala Kecil, Dampak Besar', author: 'Sari Wulandari', coverColor: const Color(0xFFF3F1E7)),
-      BookData(title: 'Sajak-Sajak Hujan Sore', author: 'Bagas Alfarizi', coverColor: const Color(0xFF96B89D)),
-    ];
-  }
-
-  List<BookData> _getRilisBaruBooks() {
-    return [
-      BookData(title: 'Misi Terakhir Jakarta Vol. 1', author: 'Bramantya Rizki', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/misi/120/180'),
-      BookData(title: 'Senja di Atap Sekolah Vol. 2', author: 'Kirana Maheswari', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/senja/120/180'),
-      BookData(title: 'Pendekar Sakura Vol. 1', author: 'Yudha Kuswadi', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/sakura/120/180'),
-      BookData(title: 'Kisah di Balik Awan', author: 'Maya', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/awan/120/180'),
-    ];
-  }
-
-  List<BookData> _getCeritaAnakBooks() {
-    return [
-      BookData(title: 'Hujan Pertama Kirana', author: 'Ratih Larasati', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/hujan/120/180'),
-      BookData(title: 'Perahu Kertas Bimo', author: 'Aryo Prayoga', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/perahu/120/180'),
-      BookData(title: 'Rimba dan Rimba', author: 'Melati Anggraini', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/rimba/120/180'),
-      BookData(title: 'Petualangan Dino', author: 'Ahmad', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/dino/120/180'),
-    ];
-  }
-
-  List<BookData> _getMangaBooks() {
-    return [
-      BookData(title: 'Pendekar Sakura Vol. 1', author: 'Yudha Kuswadi', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/sakura/120/180'),
-      BookData(title: 'Senja di Atap Sekolah Vol. 2', author: 'Kirana Maheswari', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/senja/120/180'),
-      BookData(title: 'Misi Terakhir Jakarta Vol. 1', author: 'Bramantya Rizki', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/misi/120/180'),
-      BookData(title: 'Sang Ksatria Hitam', author: 'Doni', coverColor: Colors.black, imageUrl: 'https://picsum.photos/seed/ksatria/120/180'),
-    ];
   }
 }

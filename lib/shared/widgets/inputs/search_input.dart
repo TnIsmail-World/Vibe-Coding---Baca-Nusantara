@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SearchInput extends StatelessWidget {
-  const SearchInput({super.key});
+  final ValueChanged<String>? onChanged;
+
+  const SearchInput({super.key, this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +16,7 @@ class SearchInput extends StatelessWidget {
         borderRadius: BorderRadius.circular(10), // slight rounding, typical for search
       ),
       child: TextField(
+        onChanged: onChanged,
         decoration: InputDecoration(
           hintText: 'Judul, penulis, atau penerbit',
           hintStyle: TextStyle(

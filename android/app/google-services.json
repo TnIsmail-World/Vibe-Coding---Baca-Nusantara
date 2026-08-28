@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "374063956208",
+    "project_id": "bacanusantara-app",
+    "storage_bucket": "bacanusantara-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374063956208:android:a976ef5f2c32c604a10235",
+        "android_client_info": {
+          "package_name": "com.example.baca_nusantara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374063956208-uljljh9h0bluqa1eov36220v4gjusugm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXiE38izEMtLWRT1yXkz3TlDxSahqH-Bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374063956208-uljljh9h0bluqa1eov36220v4gjusugm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

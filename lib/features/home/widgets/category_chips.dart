@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/data/app_state.dart';
 
 class CategoryChips extends StatelessWidget {
   const CategoryChips({super.key});
@@ -33,20 +34,26 @@ class CategoryChips extends StatelessWidget {
             spacing: 12.0,
             runSpacing: 12.0,
             children: categories.map((category) {
-              return Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF1D1D1F) : Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color: isDark ? const Color(0xFF383A41) : const Color(0xFFE0E0E0),
+              return GestureDetector(
+                onTap: () {
+                  AppState.instance.setSearchCategory(category);
+                  AppState.instance.changeTab(1); // Go to Search Tab
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  decoration: BoxDecoration(
+                    color: isDark ? const Color(0xFF1D1D1F) : Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: isDark ? const Color(0xFF383A41) : const Color(0xFFE0E0E0),
+                    ),
                   ),
-                ),
-                child: Text(
-                  category,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: isDark ? Colors.white : const Color(0xFF1D1D1F),
+                  child: Text(
+                    category,
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: isDark ? Colors.white : const Color(0xFF1D1D1F),
+                    ),
                   ),
                 ),
               );

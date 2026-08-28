@@ -12,7 +12,7 @@ class AchievementCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryColor = Theme.of(context).primaryColor;
-    
+
     return Container(
       width: 110,
       padding: const EdgeInsets.all(16.0),
@@ -31,7 +31,7 @@ class AchievementCard extends StatelessWidget {
             width: 32,
             height: 32,
             decoration: BoxDecoration(
-              color: primaryColor.withOpacity(0.15),
+              color: primaryColor.withValues(alpha: 0.15),
               shape: BoxShape.circle,
             ),
           ),

@@ -6,36 +6,34 @@ import '../../features/notifications/screens/notifications_screen.dart';
 import '../../features/profile/screens/profile_screen.dart';
 import '../../shared/widgets/bottom_nav_bar.dart';
 
-class RootScreen extends StatefulWidget {
+import '../data/app_state.dart';
+
+class RootScreen extends StatelessWidget {
   const RootScreen({super.key});
 
-  @override
-  State<RootScreen> createState() => _RootScreenState();
-}
-
-class _RootScreenState extends State<RootScreen> {
-  int _currentIndex = 0;
-
-  final List<Widget> _screens = [
-    const HomeScreen(),
-    const SearchScreen(),
-    const LibraryScreen(),
-    const NotificationsScreen(),
-    const ProfileScreen(),
+  final List<Widget> _screens = const [
+    HomeScreen(),
+    SearchScreen(),
+    LibraryScreen(),
+    NotificationsScreen(),
+    ProfileScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _screens[_currentIndex],
-      bottomNavigationBar: BottomNavBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-      ),
+    return ListenableBuilder(
+      listenable: AppState.instance,
+      builder: (context, _) {
+        return Scaffold(
+          body: _screens[AppState.instance.currentTab],
+          bottomNavigationBar: BottomNavBar(
+            currentIndex: AppState.instance.currentTab,
+            onTap: (index) {
+              AppState.instance.changeTab(index);
+            },
+          ),
+        );
+      },
     );
   }
 }

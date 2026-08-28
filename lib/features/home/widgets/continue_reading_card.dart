@@ -63,7 +63,7 @@ class ContinueReadingCard extends StatelessWidget {
                       image: NetworkImage(imageUrl!),
                       fit: BoxFit.cover,
                       colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.3), 
+                        Colors.black.withValues(alpha: 0.3), 
                         BlendMode.darken,
                       ),
                     )

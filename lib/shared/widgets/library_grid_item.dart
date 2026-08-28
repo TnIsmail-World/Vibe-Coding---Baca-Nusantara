@@ -7,6 +7,7 @@ class LibraryGridItem extends StatelessWidget {
   final String author;
   final double? progress; // 0.0 to 1.0, null if not started
   final Color coverColor;
+  final String? imageUrl;
 
   const LibraryGridItem({
     super.key,
@@ -14,6 +15,7 @@ class LibraryGridItem extends StatelessWidget {
     required this.author,
     this.progress,
     required this.coverColor,
+    this.imageUrl,
   });
 
   @override
@@ -29,6 +31,7 @@ class LibraryGridItem extends StatelessWidget {
               title: title,
               author: author,
               coverColor: coverColor,
+              imageUrl: imageUrl,
             ),
           ),
         );
@@ -41,6 +44,7 @@ class LibraryGridItem extends StatelessWidget {
             title: title,
             author: author,
             backgroundColor: coverColor,
+            imageUrl: imageUrl,
             width: double.infinity,
             borderRadius: 8,
           ),

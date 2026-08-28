@@ -27,7 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? Colors.black : Colors.white;
     final textColor = isDark ? Colors.white : const Color(0xFF1D1D1F);
-    final subtitleColor = isDark ? const Color(0xFF95979D) : const Color(0xFF86868B);
+    final subtitleColor =
+        isDark ? const Color(0xFF95979D) : const Color(0xFF86868B);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -58,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  
+
                   // App Name
                   Text(
                     'BacaNusantara',
@@ -70,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  
+
                   // Loading Text
                   Text(
                     'Menyiapkan pustaka Anda...',
@@ -80,16 +81,17 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                   ),
                   const SizedBox(height: 32),
-                  
+
                   // Loading Indicator
                   CircularProgressIndicator(
                     strokeWidth: 3,
-                    valueColor: AlwaysStoppedAnimation<Color>(subtitleColor.withOpacity(0.5)),
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                        subtitleColor.withValues(alpha: 0.5)),
                   ),
                 ],
               ),
             ),
-            
+
             // Bottom Footer Text
             Align(
               alignment: Alignment.bottomCenter,

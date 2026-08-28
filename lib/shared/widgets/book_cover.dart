@@ -28,19 +28,19 @@ class BookCover extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(borderRadius),
-        image: imageUrl != null 
+        image: imageUrl != null
             ? DecorationImage(
                 image: NetworkImage(imageUrl!),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.3), 
+                  Colors.black.withValues(alpha: 0.3),
                   BlendMode.darken,
                 ),
               )
             : null,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),
@@ -66,7 +66,7 @@ class BookCover extends StatelessWidget {
           Text(
             author,
             style: TextStyle(
-              color: Colors.white.withOpacity(0.8),
+              color: Colors.white.withValues(alpha: 0.8),
               fontSize: 10,
             ),
             maxLines: 1,
