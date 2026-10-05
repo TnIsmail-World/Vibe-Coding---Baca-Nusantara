@@ -18,8 +18,11 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
+        child: ListenableBuilder(
+          listenable: AppState.instance,
+          builder: (context, _) {
+            return SingleChildScrollView(
+              child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Title
@@ -131,6 +134,9 @@ class SearchScreen extends StatelessWidget {
             ],
           ),
         ),
+      );
+    },
+  ),
       ),
     );
   }

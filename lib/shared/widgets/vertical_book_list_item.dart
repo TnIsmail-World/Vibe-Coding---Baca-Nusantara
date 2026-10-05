@@ -48,37 +48,42 @@ class VerticalBookListItem extends StatelessWidget {
           ),
           const SizedBox(width: 16),
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 8),
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : const Color(0xFF1D1D1F),
+            child: SizedBox(
+              height: 120, // matching BookCover height
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? Colors.white : const Color(0xFF1D1D1F),
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  author,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: isDark ? const Color(0xFF95979D) : const Color(0xFF86868B),
+                  const SizedBox(height: 4),
+                  Text(
+                    author,
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: isDark ? const Color(0xFF95979D) : const Color(0xFF86868B),
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  label,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: isDark ? const Color(0xFFCCCCCC) : const Color(0xFF333333), // slightly darker for label
+                  const Spacer(),
+                  Text(
+                    label,
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? const Color(0xFFCCCCCC) : const Color(0xFF555555),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
